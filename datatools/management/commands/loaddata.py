@@ -7,6 +7,8 @@ import os
 import gzip
 import traceback
 import zipfile
+
+from itertools import product
 from optparse import make_option
 
 from django.conf import settings
@@ -16,7 +18,6 @@ from django.core.management.color import no_style
 from django.db import (connections, router, transaction, DEFAULT_DB_ALIAS,
       IntegrityError, DatabaseError)
 from django.db.models import get_apps
-from django.utils.itercompat import product
 
 try:
     import bz2
